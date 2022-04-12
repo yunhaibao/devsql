@@ -1,0 +1,28 @@
+-- select CURRENT_DATE
+--
+-- SELECT  CURRENT_TIME
+
+SELECT * FROM CT_Loc where CTLOC_Desc [ '风湿';
+
+SELECT * FROM INC_ItmLoc WHERE INCIL_CTLOC_DR='153';
+SELECT * FROM INC_ItmLcBt where INCLB_INCIL_ParRef->INCIL_CTLOC_DR='153';
+
+SELECT * FROM INC_ItmLoc WHERE INCIL_RowId='196||14';
+SELECT * from DHC_IncItmLoc where INCIL_INCIL_DR='196||14'
+
+SELECT * FROM INC_ItmLcBt WHERE INCLB_INCIL_ParRef='196||14';
+
+SELECT * from INC_ItmBat where INCIB_RowId='196||4';
+
+SELECT * FROM DHC_IncItmBat WHERE INCIB_INCIB_Dr='196||4';
+
+SELECT * FROM BS_PHA_IN.DataLink;
+
+INSERT INTO BS_PHA_IN.datalink
+VALUES ('LINK','User.INPO', 1972, 'User.DHCINGdRec', 1874,'哒哒哒');
+
+UPDATE BS_PHA_IN.dataLink
+   SET  REmark='依据订单入库'
+ WHERE %ID = 2;
+
+SELECT ctloc_desc as 科室 FROM ct_loc;
